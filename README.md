@@ -46,7 +46,7 @@ git config --gloabl user.email '邮箱'
 
 以上指令会在根目录(`/home`或者`c:/user/用户名/`)里面创建`.gitconfig`文件，内容类似下图
 
-![1569637881441](Git 个人手册.assets/1569637881441.png)
+![1569637881441](./assets/1569637881441.png)
 
 简介：
 
@@ -126,7 +126,7 @@ git pull
 
 先进入gitlab创建一个空的项目，本例中SSH为`ssh://git@localhost:30001/lyolve/TestProject.git`
 
-![1569639796231](Git 个人手册.assets/1569639796231.png)
+![1569639796231](./assets/1569639796231.png)
 
 ### 1. 克隆并配置
 
@@ -154,7 +154,7 @@ notepad++ config	# 用notepad++编辑
 ```
 
 改完之后是这样的画风
-![1569641110546](Git 个人手册.assets/1569641110546.png)
+![1569641110546](./assets/1569641110546.png)
 
 
 
@@ -189,7 +189,7 @@ git push -u origin master
 
 前往gitlab查看
 
-![1569641808417](Git 个人手册.assets/1569641808417.png)
+![1569641808417](./assets/1569641808417.png)
 
 ### 3. 查看操作日志
 
@@ -407,6 +407,7 @@ gs
 	# 此处需要测试两种方案，提前复制好副本
 	git pull origin master:newbranch --rebase		# 从主分支的git仓库拉最新代码
 	 git am --show-current-patch	# 查看冲突
+	```
 ```
 	
 由于README.md两个分支都做了修改，会出现冲突，需要手动处理
@@ -422,7 +423,7 @@ gs
 	modify in branch 'newbranch'
 	>>>>>>> 7a386d1ee64c1c98a36ab54c89c6b7f8227e9107
 ```
-	
+
 <<<<<<< HEAD为冲突头部标识，上方为不冲突内容，下方为冲突内容，等号隔离冲突内容，需要手动修复冲突，末尾的>>>>>>>为末尾标志+哈希值
 	
 	```python
@@ -433,7 +434,7 @@ gs
 	modify in branch 'newbranch'
 ```
 	
-	```
+```
 	git add .
 	git rebase --continue
 	gls
@@ -443,7 +444,7 @@ gs
 	
 - ==merge法==：追根溯源会比较完整，
 	
-	```
+```
 	git pull origin master:newbranch --no-ff -m 'pull from master'
 	# 用同样的方式处理
 	git add .
@@ -467,7 +468,7 @@ gs
 	>> write new code
 	# 在文件最下面一行写入
 	>> newbranch finished
-	```
+```
 
 2. 合并到主分支
 
