@@ -513,7 +513,7 @@ gls
 
 ### 6. gitignore
 
-屏蔽某些格式的文件，实质不上传到gitlab
+屏蔽某些格式的文件，使之不上传到gitlab
 
 ```
 touch .gitignore
