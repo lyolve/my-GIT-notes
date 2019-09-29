@@ -285,10 +285,14 @@ subl ~/.bash_profile
 ```
 
 >alias gs="git status"
+>
 >alias gc="git commit -m"
+>
 >alias gls="git log --format='%h -%an, %ar : %s'  --name-status --graph"
 >alias gb="git branch"
+>
 >alias ga="git add"
+>
 >alias go="git checkout"
 
 保存后关闭sublime，重新打开终端
