@@ -154,6 +154,7 @@ notepad++ config	# 用notepad++编辑
 ```
 
 改完之后是这样的画风
+
 ![1569641110546](./assets/1569641110546.png)
 
 
@@ -244,15 +245,25 @@ subl ~/.gitconfig	# 没有sublime用其他几个即可
 > alisa
 >
 > > a = add
+> >
 > > c = commit
+> >
 > > s = status
+> >
 > > p = push
+> >
 > > puom = push -u origin master
+> >
 > > l = log
+> >
 > > no = --name-only
+> >
 > > ol = --oneline
+> >
 > > ns = --name-status
+> >
 > > g = --graph
+> >
 > > logs = log --format='%h -%an, %ar : %s'  --name-status --graph
 
 保存后关闭sublime
