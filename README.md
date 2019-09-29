@@ -415,12 +415,12 @@ gs
 	cat README.md
 		
 		
-		This is a test file
-		<<<<<<< HEAD
-		write new code
-		=======
-		modify in branch 'newbranch'
-		>>>>>>> 7a386d1ee64c1c98a36ab54c89c6b7f8227e9107
+	This is a test file
+	<<<<<<< HEAD
+	write new code
+	=======
+	modify in branch 'newbranch'
+	>>>>>>> 7a386d1ee64c1c98a36ab54c89c6b7f8227e9107
 	```
 	
 	<<<<<<< HEAD为冲突头部标识，上方为不冲突内容，下方为冲突内容，等号隔离冲突内容，需要手动修复冲突，末尾的>>>>>>>为末尾标志+哈希值
@@ -487,7 +487,7 @@ gls
 
 3. 删除无用的分支
 
-	```
+	```python
 	gb
 	gb --merged		# 查看已合并分支
 	gb -D newbranch		# 删除分支newbranch
