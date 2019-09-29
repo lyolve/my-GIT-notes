@@ -408,23 +408,22 @@ gs
 	git pull origin master:newbranch --rebase		# 从主分支的git仓库拉最新代码
 	 git am --show-current-patch	# 查看冲突
 	```
-```
 	
-由于README.md两个分支都做了修改，会出现冲突，需要手动处理
+	由于README.md两个分支都做了修改，会出现冲突，需要手动处理
 	
 	```python
 	cat README.md
+		
+		
+		This is a test file
+		<<<<<<< HEAD
+		write new code
+		=======
+		modify in branch 'newbranch'
+		>>>>>>> 7a386d1ee64c1c98a36ab54c89c6b7f8227e9107
+	```
 	
-	
-	This is a test file
-	<<<<<<< HEAD
-	write new code
-	=======
-	modify in branch 'newbranch'
-	>>>>>>> 7a386d1ee64c1c98a36ab54c89c6b7f8227e9107
-```
-
-<<<<<<< HEAD为冲突头部标识，上方为不冲突内容，下方为冲突内容，等号隔离冲突内容，需要手动修复冲突，末尾的>>>>>>>为末尾标志+哈希值
+	<<<<<<< HEAD为冲突头部标识，上方为不冲突内容，下方为冲突内容，等号隔离冲突内容，需要手动修复冲突，末尾的>>>>>>>为末尾标志+哈希值
 	
 	```python
 	# 假设这是需要的效果，自己修改后保存
@@ -432,27 +431,25 @@ gs
 	This is a test file
 	write new code
 	modify in branch 'newbranch'
-```
+	```
 	
-```
+	```python
 	git add .
 	git rebase --continue
 	gls
-```
-	
+	```
 ---
-	
-- ==merge法==：追根溯源会比较完整，
-	
+
+- ==merge法==：追根溯源会比较完整，但是log会比较乱
+
+```python
+git pull origin master:newbranch --no-ff -m 'pull from master'
+# 用同样的方式处理
+git add .
+gc 'update from master'
+gls
 ```
-	git pull origin master:newbranch --no-ff -m 'pull from master'
-	# 用同样的方式处理
-	git add .
-	gc 'update from master'
-	gls
-```
-	
-	如果两种方法都尝试了，能够再`gls`时看到区别，个人建议用merge法比较稳妥
+​	如果两种方法都尝试了，能够再`gls`时看到区别，个人建议用merge法比较稳妥
 
 ##### 2. 分支开发完成合并到主分支
 
@@ -468,11 +465,11 @@ gs
 	>> write new code
 	# 在文件最下面一行写入
 	>> newbranch finished
-```
+	```
 
 2. 合并到主分支
 
-	```python
+	```
 	gs
 	ga .
 	gc 'finished newbranch'
@@ -490,7 +487,7 @@ gs
 
 3. 删除无用的分支
 
-	```python
+	```
 	gb
 	gb --merged		# 查看已合并分支
 	gb -D newbranch		# 删除分支newbranch
@@ -547,7 +544,7 @@ git push -u origin master
 
 版本回退
 
-==reset法==
+- ==reset法==
 
 ```python
 gls
@@ -566,7 +563,7 @@ git reflog	# 查看操作日志，找回回退前的版本
 git reset --hard f74e8bf	# 返回回退前的版本
 ```
 
-==revert法==
+- ==revert法==
 
 ```python
 # 原理是撤销当前commit，并新建一个commit，逆向操作一遍，可能会出现冲突
