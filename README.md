@@ -46,7 +46,7 @@ git config --gloabl user.email '邮箱'
 
 以上指令会在根目录(`/home`或者`c:/user/用户名/`)里面创建`.gitconfig`文件，内容类似下图
 
-![1569637881441](./assets/1569637881441.png)
+![1569637881441](./assets/git个人手册/1569637881441.png)
 
 简介：
 
@@ -126,7 +126,7 @@ git pull
 
 先进入gitlab创建一个空的项目，本例中SSH为`ssh://git@localhost:30001/lyolve/TestProject.git`
 
-![1569639796231](./assets/1569639796231.png)
+![1569639796231](./assets/git个人手册/1569639796231.png)
 
 ### 1. 克隆并配置
 
@@ -147,15 +147,17 @@ cat config
 
 ```python
 # 修改方式
-subl config		# 用sublime修改(需安装sublime环境)
-vi config	# 前提是熟悉vim指令
-notepad config	#用windows默认文本编辑器
+subl config			# 用sublime编辑(需安装sublime环境)
+vi config			# 前提是熟悉vim指令
+notepad config		# 用windows默认文本编辑器
+gedit config		# 用linux默认的文本编辑器
 notepad++ config	# 用notepad++编辑
+code config			# 用vscode编辑(需安装vscode)
 ```
 
 改完之后是这样的画风
 
-![1569641110546](./assets/1569641110546.png)
+![1569641110546](./assets/git个人手册/1569641110546.png)
 
 
 
@@ -190,7 +192,7 @@ git push -u origin master
 
 前往gitlab查看
 
-![1569641808417](./assets/1569641808417.png)
+![1569641808417](./assets/git个人手册/1569641808417.png)
 
 ### 3. 查看操作日志
 
