@@ -53,7 +53,7 @@ git config --gloabl user.email '邮箱'
 > user
 >
 > > email：登陆git的邮箱
-> > name：登陆git的密码
+> > name：登陆git的帐户名
 >
 > core
 >
